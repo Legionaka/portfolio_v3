@@ -54,4 +54,4 @@ AI assistance was used to help plan and scaffold the portfolio and draft impleme
 
 > "Its a clean well organized start with a strong capstone , filling in your case study details will make it like stand out but overall looks clear and proffesional for first impression" — Ammara Badat, W1 submission.
 
-**Reflection:** I learned that the portfolio’s first impression is clear, and that the case study needs more detail to stand out. I added real Medi-Clinic screenshots and will expand the case study with my role, the verified tech stack, key decisions, and next steps.
+**Reflection:** I am aiming for a Full Stack Developer role. I chose a dark, minimal design with a warm accent so the project work is easy to scan. Ammara’s feedback was that the first impression is clear and professional, and that more case study detail will help it stand out. I added the Medi-Clinic screenshots and will expand the case study with my role, verified tech stack, key decisions, and next steps.
