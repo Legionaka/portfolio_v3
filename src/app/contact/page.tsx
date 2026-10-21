@@ -1,0 +1,1 @@
+export default function ContactPage() { return <main className="page-shell placeholder-page"><p className="eyebrow">GET IN TOUCH</p><h1>Let’s talk.</h1><p>I’m open to opportunities and conversations about building for the web. Contact details and a working form will be added in a later milestone.</p></main>; }

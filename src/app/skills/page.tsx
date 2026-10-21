@@ -1,0 +1,1 @@
+export default function SkillsPage() { return <main className="page-shell placeholder-page"><p className="eyebrow">TOOLS & PRACTICE</p><h1>Skills</h1><p>This page will connect each skill to evidence in my projects and code. The first examples will be added with the Medi-Clinic case study.</p></main>; }

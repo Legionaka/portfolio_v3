@@ -1,0 +1,1 @@
+export default function AboutPage() { return <main className="page-shell placeholder-page"><p className="eyebrow">ABOUT</p><h1>Hey, I’m Legion.</h1><p>I’m a full stack developer focused on building useful, thoughtful digital experiences. This page will share more about my background, the way I work, and the roles I’m looking for.</p></main>; }

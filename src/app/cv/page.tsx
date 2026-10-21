@@ -1,0 +1,1 @@
+export default function CvPage() { return <main className="page-shell placeholder-page"><p className="eyebrow">EXPERIENCE</p><h1>CV</h1><p>A downloadable CV will be available here in a later milestone.</p></main>; }
