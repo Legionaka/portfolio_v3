@@ -1,6 +1,6 @@
 # Legion Cunningham — Portfolio
 
-> **Live site:** Add the Vercel URL here after the first deployment.
+> **Live site:** https://portfoliov3-ashen-rho.vercel.app/  
 
 ## Portfolio plan
 
