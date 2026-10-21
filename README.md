@@ -1,6 +1,8 @@
 # Legion Cunningham — Portfolio
 
-> **Live site:** https://portfoliov3-ashen-rho.vercel.app/  
+> **Live site:** [portfoliov3-ashen-rho.vercel.app](https://portfoliov3-ashen-rho.vercel.app/)
+> **Repository:** [github.com/Legionaka/portfolio_v3](https://github.com/Legionaka/portfolio_v3)
+> **README submission link:** [README.md on GitHub](https://github.com/Legionaka/portfolio_v3/blob/main/README.md)
 
 ## Portfolio plan
 
@@ -18,7 +20,7 @@ This portfolio introduces Legion Cunningham to hiring teams looking for a **Full
 The visual direction is dark and minimal: a deep charcoal canvas, restrained warm accent colour, generous spacing, and clear type. The layout will adapt from a simple single-column mobile view to a wider desktop composition. This keeps attention on the work and makes the content easy to scan.
 
 ### Featured project
-**Medi-Clinic** is a role-based clinic portal for patients and care teams. Patients can manage appointments, view records and invoices, and use the wallet view. Staff dashboards support clinical workflows, scheduling, pharmacy operations, and billing; an admin dashboard presents revenue and appointment-status charts. It is a demonstration system and has not been verified for production use with real patient data.
+**Medi-Clinic** is a role-based clinic portal for patients and care teams. Patients can manage appointments, view records and invoices, and use the wallet view. Staff dashboards support clinical workflows, scheduling, pharmacy operations, and billing; an admin dashboard presents revenue and appointment-status charts. The case study includes screenshots of the public landing page and patient, doctor, and administrator workspaces. It is a demonstration system and has not been verified for production use with real patient data.
 
 ### First milestone scope
 This milestone establishes the plan, wireframes for Home, Projects, and Contact, and a deployed Next.js + TypeScript + Tailwind skeleton with navigation and placeholder content. Supabase, the working contact form, SEO checks, and final project content are planned for later milestones.
@@ -50,4 +52,6 @@ AI assistance was used to help plan and scaffold the portfolio and draft impleme
 
 ## Peer review reflection
 
-To complete after Thursday's peer review: record the feedback received, what I learned from it, and one change I will make.
+> "Its a clean well organized start with a strong capstone , filling in your case study details will make it like stand out but overall looks clear and proffesional for first impression" — Ammara Badat, W1 submission.
+
+**Reflection:** I learned that the portfolio’s first impression is clear, and that the case study needs more detail to stand out. I added real Medi-Clinic screenshots and will expand the case study with my role, the verified tech stack, key decisions, and next steps.
