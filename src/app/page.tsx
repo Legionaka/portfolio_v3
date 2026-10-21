@@ -8,7 +8,6 @@ export default function Home() {
         <h1 id="intro-title">I build useful<br className="desktop-break" /> digital experiences.</h1>
         <p className="hero-copy">I’m Legion Cunningham. I enjoy turning complex problems into clear, thoughtful software for the people who use it.</p>
         <div className="hero-actions"><Link className="button button-primary" href="/projects">Explore my work <span aria-hidden="true">↗</span></Link><Link className="text-link" href="/contact">Get in touch <span aria-hidden="true">→</span></Link></div>
-        <div className="hero-note"><span className="status-dot" /> Building thoughtful software, one project at a time.</div>
       </section>
       <section className="featured" aria-labelledby="featured-title">
         <div className="section-heading"><div><p className="eyebrow">FEATURED PROJECT</p><h2 id="featured-title">Selected work</h2></div><Link className="text-link" href="/projects">All projects <span aria-hidden="true">→</span></Link></div>
