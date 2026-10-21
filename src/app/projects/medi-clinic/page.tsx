@@ -1,9 +1,17 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const workspaces = [
   { role: "Patient workspace", summary: "A patient home for appointments, medical records, wallet and billing, invoices, notifications, and profile details." },
   { role: "Doctor workspace", summary: "A clinical workspace for the appointment queue, patient charts, results, prescriptions and referrals, clinical notes, availability, and patient messages." },
   { role: "Administrator workspace", summary: "An operations overview for appointments, patient requests, staff coverage, billing, patient records, staff accounts, and clinic scheduling." },
+];
+
+const screens = [
+  { src: "/images/medi-clinic/landing-page.png", alt: "Medi-Clinic public landing page with a sign-in action and connected-care introduction.", caption: "Public landing page", detail: "A welcoming entry point for patients and clinic teams." },
+  { src: "/images/medi-clinic/admin-overview.png", alt: "Medi-Clinic administrator dashboard showing appointment, patient request, and invoice summaries with clinic operation links.", caption: "Administrator overview", detail: "Clinic operations, staff coverage, appointments, and billing." },
+  { src: "/images/medi-clinic/patient-workspace.png", alt: "Medi-Clinic patient workspace with appointment, medical record, wallet, and billing shortcuts.", caption: "Patient workspace", detail: "Appointments, records, notifications, and billing in one place." },
+  { src: "/images/medi-clinic/doctor-workspace.png", alt: "Medi-Clinic doctor workspace with appointment queue, patient charts, results, prescriptions, and clinical tools.", caption: "Doctor workspace", detail: "A role-specific view for clinical work and follow-up." },
 ];
 
 export default function MediClinicPage() {
@@ -30,6 +38,11 @@ export default function MediClinicPage() {
       <section className="case-section" aria-labelledby="design-title">
         <div className="case-section-heading"><p className="eyebrow">03 / EXPERIENCE</p><h2 id="design-title">A clear way into complex workflows.</h2></div>
         <p>The public landing page gives patients and clinic teams a direct sign-in path. Once signed in, each role gets its own navigation and overview, keeping the most relevant tasks close at hand. The patient and staff interfaces use a calm teal palette, clear labels, and familiar dashboard patterns.</p>
+      </section>
+
+      <section className="case-section" aria-labelledby="screens-title">
+        <div className="case-section-heading"><p className="eyebrow">04 / PRODUCT SCREENS</p><h2 id="screens-title">One system, distinct experiences.</h2></div>
+        <div className="case-gallery">{screens.map((screen, index) => <figure className={`case-shot${index === 0 ? " case-shot-wide" : ""}`} key={screen.src}><Image src={screen.src} alt={screen.alt} width={index === 0 ? 1901 : index === 1 ? 1906 : index === 2 ? 1910 : 1900} height={index === 0 ? 871 : index === 1 ? 867 : index === 2 ? 868 : 871} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 80vw, 900px" /> <figcaption><strong>{screen.caption}</strong><span>{screen.detail}</span></figcaption></figure>)}</div>
       </section>
 
       <aside className="case-disclaimer"><strong>Demonstration system</strong><p>Medi-Clinic has not been verified for production use with real patient data.</p></aside>
