@@ -15,7 +15,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <a className="skip-link" href="#main-content">Skip to content</a>
       <header className="site-header"><Link className="brand" href="/" aria-label="Legion Cunningham home"><span className="brand-mark">LC</span><span>Legion Cunningham</span></Link><nav className="site-nav" aria-label="Main navigation">{navigation.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}</nav></header>
       <div id="main-content">{children}</div>
-      <footer className="site-footer"><span>© {new Date().getFullYear()} Legion Cunningham</span><div><span>Full Stack Developer</span><a href="mailto:hello@example.com">Email ↗</a></div></footer>
+      <footer className="site-footer"><span>Legion Cunningham · Portfolio</span><div><span>Full Stack Developer</span><Link href="/contact">Contact ↗</Link></div></footer>
     </body></html>
   );
 }
