@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { deleteProject, saveProject, signOut } from "./actions";
 
-type Project = { id: string; title: string; summary: string; image_url: string | null; live_url: string | null; repo_url: string | null; published: boolean };
+type Project = { id: string; title: string; summary: string; image_url: string | null; live_url: string | null; repo_url: string | null; video_url: string | null; published: boolean };
 function ProjectForm({ project }: { project?: Project }) {
   return <form className="admin-form project-edit-form" action={saveProject}>
     {project && <input type="hidden" name="id" value={project.id} />}
@@ -12,6 +12,7 @@ function ProjectForm({ project }: { project?: Project }) {
     <label>Preview image URL<input name="image_url" type="url" defaultValue={project?.image_url ?? ""} placeholder="https://…" /></label>
     <label>Live project URL<input name="live_url" type="url" defaultValue={project?.live_url ?? ""} placeholder="https://…" /></label>
     <label>Source code URL<input name="repo_url" type="url" defaultValue={project?.repo_url ?? ""} placeholder="https://github.com/…" /></label>
+    <label>Demo video URL<input name="video_url" type="url" defaultValue={project?.video_url ?? ""} placeholder="https://youtube.com/…" /></label>
     <label className="admin-checkbox"><input name="published" type="checkbox" defaultChecked={project?.published ?? true} /> Published on public Projects page</label>
     <button className="admin-button" type="submit">{project ? "Save changes" : "Add project"}</button>
   </form>;
@@ -28,7 +29,7 @@ async function AdminContent({ searchParams }: { searchParams: Promise<{ error?: 
   if (!user) redirect("/admin/login");
   const { data: isOwner } = await supabase.rpc("is_portfolio_owner");
   if (!isOwner) redirect("/admin/login?error=owner");
-  const { data, error } = await supabase.from("projects").select("id,title,summary,image_url,live_url,repo_url,published").order("created_at", { ascending: false });
+  const { data, error } = await supabase.from("projects").select("id,title,summary,image_url,live_url,repo_url,video_url,published").order("created_at", { ascending: false });
   const projects = (data ?? []) as Project[];
   const params = await searchParams;
   return <><div className="admin-heading"><div><p className="eyebrow">PORTFOLIO MANAGEMENT</p><h1>Projects admin</h1><p>Signed in as {user.email}</p></div><form action={signOut}><button className="admin-button admin-button-secondary">Sign out</button></form></div>

@@ -22,6 +22,8 @@ The visual direction is dark and minimal: a deep charcoal canvas, restrained war
 ### Featured project
 **Medi-Clinic** is a role-based clinic portal for patients and care teams. Patients can manage appointments, view records and invoices, and use the wallet view. Staff dashboards support clinical workflows, scheduling, pharmacy operations, and billing; an admin dashboard presents revenue and appointment-status charts. The case study includes screenshots of the public landing page and patient, doctor, and administrator workspaces. It is a demonstration system and has not been verified for production use with real patient data.
 
+- [Medi-Clinic case study](https://portfoliov3-ashen-rho.vercel.app/projects/medi-clinic) · [Current demo URL](https://5-soc-dash-zlps.vercel.app/) · [Source repository](https://github.com/Legionaka/5SOC_Dash)
+
 ### First milestone scope
 This milestone establishes the plan, wireframes for Home, Projects, and Contact, and a deployed Next.js + TypeScript + Tailwind skeleton with navigation and placeholder content. Supabase, the working contact form, SEO checks, and final project content are planned for later milestones.
 
@@ -54,7 +56,7 @@ For the implementation and setup notes, see [Supabase setup](docs/supabase-setup
 
 ## AI use
 
-AI assistance was used to help plan and scaffold the portfolio and draft implementation details. I will review and be able to explain the code I submit.
+AI assistance helped plan and scaffold the portfolio and draft or revise some portfolio copy. I am responsible for reviewing the published wording and being able to explain the code I submit.
 
 ## Peer review reflection
 

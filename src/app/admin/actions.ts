@@ -34,8 +34,9 @@ export async function saveProject(formData: FormData) {
   const image_url = field(formData, "image_url") || null;
   const live_url = field(formData, "live_url") || null;
   const repo_url = field(formData, "repo_url") || null;
-  if (!title || !summary || ![image_url, live_url, repo_url].every((value) => value === null || safeUrl(value))) redirect("/admin?error=invalid");
-  const project = { title, summary, image_url, live_url, repo_url, published: formData.get("published") === "on", owner_id: user.id };
+  const video_url = field(formData, "video_url") || null;
+  if (!title || !summary || ![image_url, live_url, repo_url, video_url].every((value) => value === null || safeUrl(value))) redirect("/admin?error=invalid");
+  const project = { title, summary, image_url, live_url, repo_url, video_url, published: formData.get("published") === "on", owner_id: user.id };
   const result = id ? await supabase.from("projects").update(project).eq("id", id) : await supabase.from("projects").insert(project);
   if (result.error) redirect("/admin?error=save");
   revalidatePath("/projects"); revalidatePath("/admin");
