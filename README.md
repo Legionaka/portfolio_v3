@@ -62,7 +62,7 @@ The migration creates `projects` with title, summary, preview image, live and so
 
 ### Milestone 2 reflection (finish after the live RLS check)
 
-> I ran the migration and published the Medi-Clinic entry; it appears on the live Projects page, confirming that the page reads from Supabase. Using the publishable key without a signed-in session, my anonymous insert was rejected with HTTP 401 and a row-level security policy error, while the public read returned Medi-Clinic. The anonymous update and delete requests returned HTTP 200 with empty arrays. I still need to confirm those requests targeted an existing published test row and that it remained unchanged before I claim all three write restrictions are proven.
+> I ran the migration and published the Medi-Clinic entry; it appears on the live Projects page, confirming that the page reads from Supabase. Using the publishable key without a signed-in session, my anonymous insert was rejected with HTTP 401 and a row-level security policy error, while public read returned Medi-Clinic. Anonymous update and delete requests against an existing published test row returned HTTP 200 with empty arrays, and I confirmed the row remained unchanged. Signed in as the configured owner, I verified that the admin can add, edit, and delete projects.
 
 ## AI use
 
