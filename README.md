@@ -62,7 +62,7 @@ The migration creates `projects` with title, summary, preview image, live and so
 
 ### Milestone 2 reflection (finish after the live RLS check)
 
-> The migration defines a `projects` table with a title, summary, image URL, project links, publication status, and owner. Its RLS policies allow visitors to read published projects and reserve writes for the configured owner. I still need to run the migration in my Supabase project, add a project, and test an anonymous write using the public key before I can report the actual result. After that test, I will replace this sentence with what Supabase returned and confirm the live Projects page reads the database entry.
+> I ran the migration and confirmed that the deployed Projects page can query the `projects` table; it currently has no published rows. The migration enables public reads for published projects and restricts writes to the configured owner. I still need to assign my Auth user as the owner, add a project, and test anonymous insert, update, and delete attempts with the publishable key before I can report those results.
 
 ## AI use
 
