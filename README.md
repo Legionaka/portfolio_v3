@@ -62,7 +62,7 @@ The migration creates `projects` with title, summary, preview image, live and so
 
 ### Milestone 2 reflection (finish after the live RLS check)
 
-> I ran the migration and confirmed that the deployed Projects page can query the `projects` table; it currently has no published rows. The migration enables public reads for published projects and restricts writes to the configured owner. I still need to assign my Auth user as the owner, add a project, and test anonymous insert, update, and delete attempts with the publishable key before I can report those results.
+> I ran the migration and published the Medi-Clinic entry; it now appears on the live Projects page, confirming that the page reads from Supabase. The migration allows visitors to read published projects and reserves writes for the configured owner. I still need to test anonymous insert, update, and delete attempts with the publishable key and record the actual result before claiming the write restriction is proven.
 
 ## AI use
 
