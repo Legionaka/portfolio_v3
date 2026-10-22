@@ -44,7 +44,25 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Stack
 
-Next.js App Router, React, TypeScript, Tailwind CSS, and Vercel.
+Next.js App Router, React, TypeScript, Tailwind CSS, Supabase Auth and Postgres, and Vercel.
+
+## Milestone 2: Supabase projects and owner admin
+
+The public Projects page reads published entries from the Supabase `projects` table. `/admin/login` signs in with Supabase Auth, and `/admin` is restricted to the account configured as the portfolio owner. The admin page supports adding, editing, publishing/unpublishing, and deleting project entries. Row Level Security is enabled: anyone can read published projects, while inserts, updates, and deletes require both the configured owner account and a matching `owner_id`.
+
+### Supabase setup
+
+1. Create a Supabase project and add your owner account under **Authentication → Users**. Keep public sign-up disabled if this project is intended to have only your account.
+2. The Vercel Supabase integration syncs environment variables to the connected Vercel project. Confirm that `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` exist under **Project → Settings → Environment Variables**. For local development, put their values in `.env.local` (ignored by Git). Never use or expose a secret/service-role key in this app.
+3. In the Supabase SQL Editor, run [`supabase/migrations/202610220001_projects_rls.sql`](supabase/migrations/202610220001_projects_rls.sql). Copy your Auth user's UUID from **Authentication → Users**, replace `YOUR_AUTH_USER_UUID` in the final commented statement, uncomment it, and run that statement to designate the single portfolio owner.
+4. Redeploy after confirming the synced variables are available to the deployment. Then sign in at `/admin/login`, add the Medi-Clinic project, and publish it. Use `/projects` to confirm the public page shows the database entry.
+5. Verify RLS using the public anon key only: an unauthenticated insert, update, and delete should each fail (or affect zero rows); an unauthenticated select should return published rows only. Do not use the service-role key for this check. Record what you tried and what Supabase returned in your submission reflection.
+
+The migration creates `projects` with title, summary, preview image, live and source links, publication status, owner, and timestamps. It also creates a private singleton owner setting; the `is_portfolio_owner()` function only returns a boolean and lets RLS check the owner without exposing the setting table. The site deliberately shows an empty/setup state instead of substituting hard-coded project data when Supabase is not configured.
+
+### Milestone 2 reflection (finish after the live RLS check)
+
+> The migration defines a `projects` table with a title, summary, image URL, project links, publication status, and owner. Its RLS policies allow visitors to read published projects and reserve writes for the configured owner. I still need to run the migration in my Supabase project, add a project, and test an anonymous write using the public key before I can report the actual result. After that test, I will replace this sentence with what Supabase returned and confirm the live Projects page reads the database entry.
 
 ## AI use
 
