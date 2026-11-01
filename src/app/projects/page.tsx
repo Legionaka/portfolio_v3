@@ -58,55 +58,56 @@ async function ProjectsContent() {
         <p className="project-empty">No published projects yet. Check back soon.</p>
       ) : (
         <section className="project-list" aria-label="Published projects">
-          {projects.map((project, index) => (
-            <article className="project-card projects-feature" key={project.id || `${project.title}-${index}`}>
-              <div className="project-visual">
-                {project.image_url ? (
+          {projects.map((project, index) => {
+            const imageSrc = project.image_url || "/images/project-placeholder.svg";
+            const projectTitle = project.title.toLowerCase();
+
+            return (
+              <article className="project-card projects-feature" key={project.id || `${project.title}-${index}`}>
+                <div className="project-visual">
                   <Image
                     className="project-screenshot"
-                    src={project.image_url}
+                    src={imageSrc}
                     alt={`${project.title} project preview`}
                     fill
                     sizes="(max-width: 700px) 100vw, 650px"
                     unoptimized
                   />
-                ) : (
-                  <div className="project-no-image">{project.title}</div>
-                )}
-              </div>
-
-              <div className="project-info">
-                <p className="eyebrow">{String(index + 1).padStart(2, "0")} / PROJECT</p>
-                <div className="project-title-row">
-                  <h2>{project.title}</h2>
                 </div>
-                <p>{project.summary}</p>
 
-                <div className="project-card-bottom">
-                  <div className="project-links">
-                    {project.live_url && (
-                      <a href={project.live_url} target="_blank" rel="noreferrer">
-                        Live project ↗
-                      </a>
-                    )}
-                    {project.repo_url && (
-                      <a href={project.repo_url} target="_blank" rel="noreferrer">
-                        Source code ↗
-                      </a>
-                    )}
-                    {project.video_url && (
-                      <a href={project.video_url} target="_blank" rel="noreferrer">
-                        Watch demo ↗
-                      </a>
-                    )}
-                    {project.title.toLowerCase().includes("medi-clinic") && (
-                      <Link href="/projects/medi-clinic">Case study →</Link>
-                    )}
+                <div className="project-info">
+                  <p className="eyebrow">{String(index + 1).padStart(2, "0")} / PROJECT</p>
+                  <div className="project-title-row">
+                    <h2>{project.title}</h2>
+                  </div>
+                  <p>{project.summary}</p>
+
+                  <div className="project-card-bottom">
+                    <div className="project-links">
+                      {project.live_url && (
+                        <a href={project.live_url} target="_blank" rel="noreferrer">
+                          Live project ↗
+                        </a>
+                      )}
+                      {project.repo_url && (
+                        <a href={project.repo_url} target="_blank" rel="noreferrer">
+                          Source code ↗
+                        </a>
+                      )}
+                      {project.video_url && (
+                        <a href={project.video_url} target="_blank" rel="noreferrer">
+                          Watch demo ↗
+                        </a>
+                      )}
+                      {projectTitle.includes("medi-clinic") && (
+                        <Link href="/projects/medi-clinic">Case study →</Link>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </section>
       )}
     </>

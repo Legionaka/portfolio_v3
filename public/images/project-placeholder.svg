@@ -1,0 +1,18 @@
+<svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1100" fill="#111214"/>
+  <rect x="40" y="40" width="1520" height="1020" rx="28" fill="#191A1D" stroke="#2F3136" stroke-width="2"/>
+  <rect x="120" y="120" width="1360" height="860" rx="20" fill="#121417" stroke="#3A3D41" stroke-width="2"/>
+  <rect x="180" y="220" width="500" height="260" rx="18" fill="#202328"/>
+  <rect x="180" y="520" width="500" height="22" rx="11" fill="#2E3136"/>
+  <rect x="180" y="570" width="430" height="18" rx="9" fill="#2E3136"/>
+  <rect x="180" y="610" width="380" height="18" rx="9" fill="#2E3136"/>
+  <rect x="770" y="210" width="600" height="70" rx="16" fill="#1F2329"/>
+  <rect x="770" y="320" width="600" height="24" rx="12" fill="#2B2F35"/>
+  <rect x="770" y="370" width="520" height="24" rx="12" fill="#2B2F35"/>
+  <rect x="770" y="420" width="560" height="24" rx="12" fill="#2B2F35"/>
+  <rect x="770" y="510" width="170" height="42" rx="21" fill="#D8AA7D" fill-opacity="0.18"/>
+  <rect x="770" y="570" width="170" height="42" rx="21" fill="#D8AA7D" fill-opacity="0.12"/>
+  <path d="M741 820C798.2 738.6 845.6 700 913.6 700C1008.8 700 1018.8 800 1110 800C1201.2 800 1247 721.8 1339 721.8C1428.4 721.8 1472.6 804.8 1534 820V940H741V820Z" fill="#1C2127"/>
+  <circle cx="1050" cy="420" r="90" fill="#D8AA7D" fill-opacity="0.12"/>
+  <text x="800" y="990" fill="#E8E1D9" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" letter-spacing="6">PROJECT PREVIEW</text>
+</svg>
