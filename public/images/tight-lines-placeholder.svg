@@ -1,0 +1,13 @@
+<svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1100" fill="#111214"/>
+  <rect x="40" y="40" width="1520" height="1020" rx="28" fill="#171A1E" stroke="#2E3338" stroke-width="2"/>
+  <rect x="120" y="140" width="1360" height="820" rx="18" fill="#121417" stroke="#31363C" stroke-width="2"/>
+  <rect x="210" y="220" width="370" height="260" rx="18" fill="#1D2228"/>
+  <rect x="640" y="220" width="680" height="68" rx="18" fill="#D8AA7D" fill-opacity="0.2"/>
+  <rect x="640" y="320" width="620" height="18" rx="9" fill="#2B3036"/>
+  <rect x="640" y="360" width="540" height="18" rx="9" fill="#2B3036"/>
+  <rect x="640" y="400" width="470" height="18" rx="9" fill="#2B3036"/>
+  <path d="M210 770C370 720 457 700 566 700C685 700 756 760 882 760C1015 760 1095 670 1217 670C1330 670 1415 725 1490 760V960H210V770Z" fill="#1C2025"/>
+  <circle cx="1040" cy="430" r="92" fill="#D8AA7D" fill-opacity="0.16"/>
+  <text x="600" y="980" fill="#E7E1D7" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" letter-spacing="6">TIGHT LINES</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1100" fill="#111214"/>
+  <rect x="40" y="40" width="1520" height="1020" rx="28" fill="#171A1E" stroke="#2E3338" stroke-width="2"/>
+  <rect x="120" y="140" width="1360" height="820" rx="18" fill="#121417" stroke="#31363C" stroke-width="2"/>
+  <rect x="210" y="220" width="300" height="210" rx="18" fill="#1D2228"/>
+  <rect x="590" y="220" width="780" height="68" rx="16" fill="#D8AA7D" fill-opacity="0.2"/>
+  <rect x="590" y="320" width="700" height="18" rx="9" fill="#2B3036"/>
+  <rect x="590" y="360" width="620" height="18" rx="9" fill="#2B3036"/>
+  <rect x="590" y="400" width="540" height="18" rx="9" fill="#2B3036"/>
+  <path d="M230 740C330 680 412 660 520 660C635 660 710 720 810 720C915 720 998 640 1098 640C1197 640 1292 708 1385 708V920H230V740Z" fill="#1C2025"/>
+  <circle cx="1030" cy="430" r="86" fill="#D8AA7D" fill-opacity="0.18"/>
+  <text x="560" y="980" fill="#E7E1D7" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" letter-spacing="6">ALTIS AIRPORT EXPLORER</text>
+</svg>
