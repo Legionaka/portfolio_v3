@@ -20,8 +20,8 @@ The site is aimed at hiring teams, recruiters, and collaborators assessing a Ful
 - **Projects:** a public gallery of published work pulled from Supabase
 - **Medi-Clinic case study:** a deeper dive into the capstone project, including role, stack, decisions, and evidence
 - **Skills:** each skill links to code or a live example to show proof in practice
-- **Contact:** available path for inquiries and follow-up
-- **CV:** placeholder page for a later milestone item
+- **Contact:** a working Supabase-backed contact form with basic spam protection, plus direct contact links
+- **CV:** profile page with a downloadable PDF
 
 ## Project content
 
@@ -50,13 +50,13 @@ The layout adapts for mobile and desktop without losing clarity, making the proj
 
 ## Stack
 
-Next.js App Router, React, TypeScript, CSS, Supabase, and Vercel.
+Next.js App Router, React, TypeScript, Tailwind CSS with custom CSS, Supabase, and Vercel.
 
 ## Supabase and project data
 
-The public Projects page reads from the Supabase `projects` table and shows only published entries. The admin area is protected by authentication and checks owner access before allowing write operations.
+The public Projects page reads from the Supabase `projects` table and shows only published entries. The admin area is protected by Supabase Auth and checks owner access before allowing project writes. The contact form saves submissions to the `contact_messages` table; visitors can insert messages but cannot read the inbox. Apply all SQL migrations in `supabase/migrations/` before using these features.
 
-For setup and database notes, see [Supabase setup](docs/supabase-setup.md).
+For setup and database notes, see [Supabase setup](docs/supabase-setup.md). Required local environment variables are `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`; add them to `.env.local` (never commit environment files).
 
 ## Run locally
 

@@ -45,6 +45,9 @@ export default function CvPage() {
 					<span>Full Stack Developer</span>
 					<span>Available for product and web roles</span>
 				</div>
+				<a className="button button-primary cv-download" href="/Legion-Cunningham-CV.pdf" download>
+					Download CV <span aria-hidden="true">↓</span>
+				</a>
 			</header>
 
 			<section className="cv-grid" aria-label="CV details">

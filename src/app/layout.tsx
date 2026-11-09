@@ -4,12 +4,28 @@ import { MobileNav } from "./mobile-nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfoliov3-ashen-rho.vercel.app"),
   title: {
     default: "Legion Cunningham | Full Stack Developer",
     template: "%s | Legion Cunningham",
   },
   description:
     "Portfolio of Legion Cunningham, a full stack developer building thoughtful digital experiences.",
+  openGraph: {
+    type: "website",
+    url: "/",
+    title: "Legion Cunningham | Full Stack Developer",
+    description: "Portfolio of Legion Cunningham, a full stack developer building thoughtful digital experiences.",
+    siteName: "Legion Cunningham Portfolio",
+    images: [{ url: "/images/medi-clinic/landing-page.png", alt: "Medi-Clinic featured project" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Legion Cunningham | Full Stack Developer",
+    description: "Portfolio of Legion Cunningham, a full stack developer building thoughtful digital experiences.",
+    images: ["/images/medi-clinic/landing-page.png"],
+  },
+  alternates: { canonical: "/" },
   icons: {
     icon: "/icon.svg",
   },

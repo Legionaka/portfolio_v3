@@ -1,5 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Medi-Clinic Case Study",
+  description: "A case study of Medi-Clinic, a role-based healthcare portal for patients, clinicians, and clinic administrators.",
+  alternates: { canonical: "/projects/medi-clinic" },
+};
 
 const workspaces = [
   { role: "Patient workspace", summary: "A patient home for appointments, medical records, wallet and billing, invoices, notifications, and profile details." },

@@ -11,3 +11,8 @@ The public Projects page reads published entries from the Supabase `projects` ta
 5. After confirming the synced variables are available to the deployment, sign in at `/admin/login`, add and publish each project, then use `/projects` to confirm the database entries appear.
 
 The first migration creates `projects` with title, summary, preview image, live and source links, publication status, owner, and timestamps. The second adds an optional video URL. The migrations also create a private singleton owner setting; `is_portfolio_owner()` returns only a boolean so RLS can check ownership without exposing the setting table. The site shows an empty or setup state instead of hard-coded project data when Supabase is unavailable.
+
+
+## Contact form
+
+Run [`../supabase/migrations/202611090001_contact_messages.sql`](../supabase/migrations/202611090001_contact_messages.sql) to create the inbox table and allow submissions. The table has an insert-only RLS policy and no visitor read policy. The form uses the public Supabase key, a hidden honeypot field, and a minimum completion-time check as basic spam controls. Review submissions from the Supabase dashboard.

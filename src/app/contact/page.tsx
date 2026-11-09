@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContactForm } from "./contact-form";
 
 export const metadata: Metadata = {
 	title: "Contact",
@@ -60,6 +61,14 @@ export default function ContactPage() {
 						</span>
 					</article>
 				))}
+			</section>
+
+			<section className="contact-form-section" aria-labelledby="contact-form-title">
+				<div>
+					<p className="eyebrow">SEND A MESSAGE</p>
+					<h2 id="contact-form-title">Tell me what you have in mind.</h2>
+				</div>
+				<ContactForm />
 			</section>
 
 			<p className="contact-note">
