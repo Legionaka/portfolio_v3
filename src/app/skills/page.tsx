@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Skills",
+	description:
+		"See the skills Legion Cunningham applies across product work, frontend development, data handling, and deployment.",
+};
+
 const skills = [
 	{
 		name: "Next.js App Router",

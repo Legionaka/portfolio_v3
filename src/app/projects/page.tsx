@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "Explore Legion Cunningham’s selected work across product, full-stack, and user-focused digital experiences.",
+};
 
 type Project = {
   id: string;

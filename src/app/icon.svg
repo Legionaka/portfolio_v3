@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Legion icon">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f3d5a4"/>
+      <stop offset="100%" stop-color="#d78b4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#141517"/>
+  <path d="M18 46V18h10.5c8.4 0 15 5.7 15 14.2S36.9 46 28.5 46H18zm10.4-8.4h2.6c4.1 0 6.7-2.6 6.7-7.4s-2.6-7.4-6.7-7.4h-2.6v14.8z" fill="url(#g)"/>
+  <path d="M46 18h-8.5v28H46V18z" fill="#f4efe7" opacity="0.9"/>
+</svg>

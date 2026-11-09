@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn more about Legion Cunningham, a full stack developer focused on useful products and clear workflows.",
+};
 
 const strengths = [
   "Full stack product thinking",
