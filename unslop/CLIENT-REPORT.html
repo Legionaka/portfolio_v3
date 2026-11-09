@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio Design Report</title>
+    <style>
+      :root { color-scheme: light; font-family: Arial, Helvetica, sans-serif; color: #202124; background: #f5f5f2; }
+      * { box-sizing: border-box; }
+      body { margin: 0; line-height: 1.6; }
+      main { width: min(1080px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0 48px; }
+      h1, h2, p, figure { margin-top: 0; }
+      h1 { margin-bottom: 12px; font-size: clamp(38px, 7vw, 72px); line-height: 1.05; letter-spacing: -0.05em; }
+      h2 { margin: 0 0 16px; font-size: 22px; letter-spacing: -0.02em; }
+      .intro { max-width: 680px; margin-bottom: 36px; color: #55585b; }
+      .score { display: block; }
+      .comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin: 28px 0 48px; }
+      figure { min-width: 0; margin-bottom: 0; }
+      figure img { display: block; width: 100%; height: auto; border: 1px solid #d9d9d4; border-radius: 8px; }
+      figcaption { margin-top: 8px; color: #5c5f62; font-size: 14px; }
+      section { margin: 0 0 34px; }
+      ul { margin: 0; padding-left: 22px; }
+      li + li { margin-top: 8px; }
+      .change { padding-bottom: 16px; border-bottom: 1px solid #d8d9d4; }
+      .change + .change { padding-top: 16px; }
+      .verified { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 24px; padding: 0; list-style: none; }
+      .verified li { padding: 14px 16px; border: 1px solid #d8d9d4; border-radius: 8px; background: #fff; }
+      .note { color: #5c5f62; font-size: 14px; }
+      footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid #d8d9d4; color: #5c5f62; font-size: 14px; }
+      footer a { color: #285b67; }
+      @media (max-width: 680px) {
+        main { width: min(100% - 32px, 560px); padding-top: 36px; }
+        .comparison, .verified { grid-template-columns: 1fr; }
+      }
+      @media print {
+        :root { background: #fff; }
+        main { width: 100%; padding: 0; }
+        .comparison { gap: 12px; }
+        section, figure { break-inside: avoid; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1><span class="score">Design score: 79 → 100</span></h1>
+        <p class="intro">This score comes from an evidence-based review of design consistency, accessibility, and responsive behavior across 28 applicable checks.</p>
+      </header>
+
+      <section aria-labelledby="comparison-title">
+        <h2 id="comparison-title">Before and after</h2>
+        <div class="comparison">
+          <figure>
+            <img src="screenshots/1440.png" alt="Portfolio homepage before the design updates at desktop width">
+            <figcaption>Before: the original homepage</figcaption>
+          </figure>
+          <figure>
+            <img src="screenshots/final/1440.png" alt="Portfolio homepage after the design updates at desktop width">
+            <figcaption>After: the updated homepage</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="findings-title">
+        <h2 id="findings-title">What needed attention</h2>
+        <ul>
+          <li>Small footer text was too faint to meet the standard for comfortable reading.</li>
+          <li>Text sizes and boldness varied more than needed, making the hierarchy less consistent.</li>
+          <li>Headings and paragraphs used uneven spacing between lines.</li>
+          <li>The mobile menu control was slightly smaller than the recommended touch size.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="changes-title">
+        <h2 id="changes-title">What changed</h2>
+        <div class="change">
+          <strong>Color and identity.</strong> The charcoal and amber palette remains; muted text is now brighter so small copy is easier to read.
+        </div>
+        <div class="change">
+          <strong>Typography.</strong> The Warm Editorial Portfolio direction pairs serif headings with sans-serif body text, uses two weights, and applies a shared nine-step size scale with more even line spacing.
+        </div>
+        <div class="change">
+          <strong>Layout and mobile use.</strong> The left-aligned introduction and featured project remain the visual focus. The mobile menu now has a 44-pixel square touch area.
+        </div>
+        <div class="change">
+          <strong>Interaction polish.</strong> Existing hover, keyboard focus, reduced-motion, and data feedback states were retained and reviewed.
+        </div>
+      </section>
+
+      <section aria-labelledby="verified-title">
+        <h2 id="verified-title">Verified results</h2>
+        <ul class="verified">
+          <li>Sampled text colors pass WCAG AA contrast checks.</li>
+          <li>Phone, tablet, and desktop widths show no horizontal overflow.</li>
+          <li>The production build completes successfully.</li>
+          <li>The final design audit passes all 28 applicable checks.</li>
+        </ul>
+      </section>
+
+      <p class="note"><strong>Coverage:</strong> The visual comparison shows the homepage. Shared styles and route source were also reviewed for the other pages.</p>
+
+      <footer>
+        Prepared 9 November 2026 · Audited and re-themed with Unslop ·
+        <a href="DESIGN-AUDIT.md">Technical design audit</a> ·
+        <a href="RETHEME-REPORT.md">Retheme report</a>
+      </footer>
+    </main>
+  </body>
+</html>
