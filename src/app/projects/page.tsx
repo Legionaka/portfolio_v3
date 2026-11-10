@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { ProjectPreview } from "./project-preview";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -88,7 +88,7 @@ async function ProjectsContent() {
         {projects.map((project, index) => (
           <article className="project-card projects-feature" key={project.id || `${project.title}-${index}`}>
             <div className="project-visual">
-              <Image className="project-screenshot" src={project.image_url || "/images/project-placeholder.svg"} alt={`${project.title} project preview`} fill sizes="(max-width: 700px) 100vw, 650px" unoptimized />
+              <ProjectPreview title={project.title} src={project.image_url} />
             </div>
             <div className="project-info">
               <p className="eyebrow">{project.featured ? "FEATURED PROJECT" : `${String(index + 1).padStart(2, "0")} / PROJECT`}</p>
@@ -102,10 +102,10 @@ async function ProjectsContent() {
               )}
               {project.stack?.length > 0 && <div className="tag-row project-stack" aria-label="Technology used">{project.stack.map((item) => <span key={item}>{item}</span>)}</div>}
               <div className="project-card-bottom"><div className="project-links">
-                {project.live_url && <a href={project.live_url} target="_blank" rel="noreferrer">{project.fallback || project.title.toLowerCase().includes("medi-clinic") ? "Open demo portal" : "Live project"} <span aria-hidden="true">↗</span></a>}
-                {project.repo_url && <a href={project.repo_url} target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a>}
-                {project.video_url && <a href={project.video_url} target="_blank" rel="noreferrer">Watch demo <span aria-hidden="true">↗</span></a>}
-                {project.title.toLowerCase().includes("medi-clinic") && <Link href="/projects/medi-clinic">Case study <span aria-hidden="true">→</span></Link>}
+                {project.live_url && <a href={project.live_url} target="_blank" rel="noreferrer">{project.fallback || project.title.toLowerCase().includes("medi-clinic") ? "Open demo portal" : "Live project"} <span aria-hidden="true">&#8599;</span></a>}
+                {project.repo_url && <a href={project.repo_url} target="_blank" rel="noreferrer">Source code <span aria-hidden="true">&#8599;</span></a>}
+                {project.video_url && <a href={project.video_url} target="_blank" rel="noreferrer">Watch demo <span aria-hidden="true">&#8599;</span></a>}
+                {project.title.toLowerCase().includes("medi-clinic") && <Link href="/projects/medi-clinic">Case study <span aria-hidden="true">&#8594;</span></Link>}
               </div></div>
             </div>
           </article>
