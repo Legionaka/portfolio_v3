@@ -35,8 +35,12 @@ export async function saveProject(formData: FormData) {
   const live_url = field(formData, "live_url") || null;
   const repo_url = field(formData, "repo_url") || null;
   const video_url = field(formData, "video_url") || null;
-  if (!title || !summary || ![image_url, live_url, repo_url, video_url].every((value) => value === null || safeUrl(value))) redirect("/admin?error=invalid");
-  const project = { title, summary, image_url, live_url, repo_url, video_url, published: formData.get("published") === "on", owner_id: user.id };
+  const role = field(formData, "role") || null;
+  const outcome = field(formData, "outcome") || null;
+  const stack = field(formData, "stack").split(",").map((item) => item.trim()).filter(Boolean).slice(0, 12);
+  const orderValue = Number(field(formData, "sort_order") || 0);
+  if (!title || !summary || ![image_url, live_url, repo_url, video_url].every((value) => value === null || safeUrl(value)) || !Number.isInteger(orderValue) || orderValue < 0 || orderValue > 999) redirect("/admin?error=invalid");
+  const project = { title, summary, image_url, live_url, repo_url, video_url, role, outcome, stack, featured: formData.get("featured") === "on", sort_order: orderValue, published: formData.get("published") === "on", owner_id: user.id };
   const result = id ? await supabase.from("projects").update(project).eq("id", id) : await supabase.from("projects").insert(project);
   if (result.error) redirect("/admin?error=save");
   revalidatePath("/projects"); revalidatePath("/admin");

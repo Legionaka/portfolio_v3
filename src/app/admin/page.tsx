@@ -3,12 +3,17 @@ import { Suspense } from "react";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { deleteProject, saveProject, signOut } from "./actions";
 
-type Project = { id: string; title: string; summary: string; image_url: string | null; live_url: string | null; repo_url: string | null; video_url: string | null; published: boolean };
+type Project = { id: string; title: string; summary: string; image_url: string | null; live_url: string | null; repo_url: string | null; video_url: string | null; role: string | null; outcome: string | null; stack: string[]; featured: boolean; sort_order: number; published: boolean };
 function ProjectForm({ project }: { project?: Project }) {
   return <form className="admin-form project-edit-form" action={saveProject}>
     {project && <input type="hidden" name="id" value={project.id} />}
     <label>Title<input name="title" defaultValue={project?.title} required maxLength={120} /></label>
     <label>Summary<textarea name="summary" defaultValue={project?.summary} required maxLength={600} rows={3} /></label>
+    <label>Your contribution<input name="role" defaultValue={project?.role ?? ""} maxLength={120} placeholder="e.g. Full-stack developer" /></label>
+    <label>Outcome or key decision<textarea name="outcome" defaultValue={project?.outcome ?? ""} maxLength={300} rows={2} placeholder="What does this project enable?" /></label>
+    <label>Technology stack<input name="stack" defaultValue={project?.stack?.join(", ") ?? ""} maxLength={300} placeholder="Next.js, Supabase, PostgreSQL" /></label>
+    <label>Display order<input name="sort_order" type="number" defaultValue={project?.sort_order ?? 0} min={0} max={999} /></label>
+    <label className="admin-checkbox"><input name="featured" type="checkbox" defaultChecked={project?.featured ?? false} /> Feature near the top of the Projects page</label>
     <label>Preview image URL<input name="image_url" type="url" defaultValue={project?.image_url ?? ""} placeholder="https://…" /></label>
     <label>Live project URL<input name="live_url" type="url" defaultValue={project?.live_url ?? ""} placeholder="https://…" /></label>
     <label>Source code URL<input name="repo_url" type="url" defaultValue={project?.repo_url ?? ""} placeholder="https://github.com/…" /></label>
@@ -29,7 +34,7 @@ async function AdminContent({ searchParams }: { searchParams: Promise<{ error?: 
   if (!user) redirect("/admin/login");
   const { data: isOwner } = await supabase.rpc("is_portfolio_owner");
   if (!isOwner) redirect("/admin/login?error=owner");
-  const { data, error } = await supabase.from("projects").select("id,title,summary,image_url,live_url,repo_url,video_url,published").order("created_at", { ascending: false });
+  const { data, error } = await supabase.from("projects").select("id,title,summary,image_url,live_url,repo_url,video_url,role,outcome,stack,featured,sort_order,published").order("featured", { ascending: false }).order("sort_order", { ascending: true }).order("created_at", { ascending: false });
   const projects = (data ?? []) as Project[];
   const params = await searchParams;
   return <><div className="admin-heading"><div><p className="eyebrow">PORTFOLIO MANAGEMENT</p><h1>Projects admin</h1><p>Signed in as {user.email}</p></div><form action={signOut}><button className="admin-button admin-button-secondary">Sign out</button></form></div>

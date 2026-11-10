@@ -28,13 +28,13 @@ const stack = ["Next.js App Router", "React", "Supabase Auth", "PostgreSQL", "Ta
 export default function MediClinicPage() {
   return (
     <main className="page-shell case-study">
-      <Link className="back-link" href="/projects">← Back to projects</Link>
+      <Link className="back-link" href="/projects">Back to projects</Link>
       <header className="case-hero">
-        <p className="eyebrow">FEATURED CASE STUDY · HEALTHCARE</p>
+        <p className="eyebrow">FEATURED CASE STUDY &#183; HEALTHCARE</p>
         <h1>Medi-Clinic</h1>
         <p className="case-lede">A role-based clinic portal that brings patient services and clinic operations into one connected system.</p>
         <div className="tag-row"><span>Patient experience</span><span>Clinical workflows</span><span>Clinic operations</span></div>
-        <div className="case-hero-links"><a className="button button-primary" href={projectUrl} target="_blank" rel="noreferrer">Open live project <span aria-hidden="true">↗</span></a><a className="case-inline-link" href={repositoryUrl} target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a></div>
+        <div className="case-hero-links"><a className="button button-primary" href={projectUrl} target="_blank" rel="noreferrer">Open demo portal <span aria-hidden="true">&#8599;</span></a><a className="case-inline-link" href={repositoryUrl} target="_blank" rel="noreferrer">Source code <span aria-hidden="true">&#8599;</span></a></div>
       </header>
 
       <section className="case-section case-problem" aria-labelledby="problem-title">
@@ -55,9 +55,9 @@ export default function MediClinicPage() {
       <section className="case-section" aria-labelledby="design-title">
         <div className="case-section-heading"><p className="eyebrow">04 / DESIGN DECISIONS</p><h2 id="design-title">Keep each role focused.</h2></div>
         <div className="case-decision-grid">
-          <article><h3>Separate workspaces</h3><p>Each role has its own navigation and landing view, so patient services and staff tools are grouped around the work shown in that workspace.</p></article>
-          <article><h3>Surface the next task</h3><p>Overview cards put appointments, pending work, and account information near the top, with links into the relevant workflow.</p></article>
-          <article><h3>Use a shared visual language</h3><p>Consistent labels, spacing, and dashboard patterns help the different workspaces feel like one clinic system.</p></article>
+          <article><h3>Match navigation to the role</h3><p>The patient view groups appointments, records, billing, and profile tools. The clinician view centers on appointment queues, charts, results, prescriptions, and follow-up.</p></article>
+          <article><h3>Make operations scannable</h3><p>The administrator overview surfaces appointment volume, patient requests, invoices, and staff coverage, then links into scheduling and account management.</p></article>
+          <article><h3>Connect tasks to their detail</h3><p>Workspace shortcuts lead from summary information into related records and workflows. The project includes invoice generation and PDF output; deployment and access behavior still need verification.</p></article>
         </div>
       </section>
 
@@ -67,9 +67,9 @@ export default function MediClinicPage() {
       </section>
 
       <section className="case-section case-next" aria-labelledby="next-title">
-        <div className="case-section-heading"><p className="eyebrow">06 / WHAT I’D DO NEXT</p><h2 id="next-title">Verify the deployment and remaining work.</h2></div>
+        <div className="case-section-heading"><p className="eyebrow">06 / WHAT I'D DO NEXT</p><h2 id="next-title">Verify the deployment and remaining work.</h2></div>
         <p>My next steps are to configure and smoke-test a deployed URL, record two-user access checks against Supabase, and implement or defer the remaining proposal items.</p>
-        <a className="case-inline-link" href={projectUrl} target="_blank" rel="noreferrer">Visit Medi-Clinic <span aria-hidden="true">↗</span></a>
+        <a className="case-inline-link" href={projectUrl} target="_blank" rel="noreferrer">Visit Medi-Clinic demo <span aria-hidden="true">&#8599;</span></a>
       </section>
 
       <aside className="case-disclaimer"><strong>Demonstration system</strong><p>Medi-Clinic has not been verified for production use with real patient data.</p></aside>
