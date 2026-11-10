@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MobileNav } from "./mobile-nav";
+import { SiteNavigation } from "./mobile-nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -31,8 +31,6 @@ export const metadata: Metadata = {
   },
 };
 
-const navigation = [["About", "/about"], ["Projects", "/projects"], ["Skills", "/skills"], ["Contact", "/contact"], ["CV", "/cv"]];
-
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
@@ -42,14 +40,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Link className="brand" href="/" aria-label="Legion Cunningham home">
             Legion Cunningham
           </Link>
-          <nav className="site-nav" aria-label="Main navigation">
-            {navigation.map(([label, href]) => (
-              <Link key={href} href={href}>
-                {label}
-              </Link>
-            ))}
-          </nav>
-          <MobileNav />
+          <SiteNavigation />
+          <div className="header-links">
+            <a href="https://www.linkedin.com/in/legion-cunningham" target="_blank" rel="noreferrer">
+              LinkedIn <span aria-hidden="true">↗</span>
+            </a>
+            <a href="/Legion-Cunningham-CV.pdf" target="_blank">
+              Resume <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </header>
         <div id="main-content">{children}</div>
         <footer className="site-footer">

@@ -2,95 +2,181 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-	title: "CV",
-	description:
-		"Professional summary and experience overview for Legion Cunningham, a full stack developer focused on useful digital products.",
+  title: "CV",
+  description:
+    "CV of Legion Cunningham, a software engineering student and junior developer in Johannesburg.",
 };
 
-const experience = [
-	{
-		title: "Full Stack Developer",
-		detail: "Focused on web applications, product workflows, and well-structured data-driven interfaces.",
-	},
-	{
-		title: "Product-minded problem solver",
-		detail: "Works across UX, app logic, and backend systems to turn practical requirements into usable software.",
-	},
-	{
-		title: "Evidence-based builder",
-		detail: "Builds with a focus on accessibility, maintainability, iterative delivery, and clear technical decisions.",
-	},
+const projects = [
+  {
+    name: "TrueMarket",
+    category: "Retail operations",
+    summary:
+      "A full stack point-of-sale system covering checkout, cashier shifts, refunds, inventory, and store reports.",
+    stack: "Next.js · React · TypeScript · Supabase · PostgreSQL",
+  },
+  {
+    name: "Medi-Clinic",
+    category: "Healthcare workflows",
+    summary:
+      "A demonstration portal with separate patient, clinician, and administrator workspaces.",
+    stack: "Next.js · React · Supabase Auth · PostgreSQL",
+    href: "/projects/medi-clinic",
+    linkLabel: "Read the case study",
+  },
+  {
+    name: "Stillwater",
+    category: "Fishing and location data",
+    summary:
+      "A mobile-first South African fishing-water guide with location data, community features, and offline access to saved guides.",
+    stack: "Node.js · PostgreSQL · PostGIS · Vercel",
+    href: "https://github.com/Legionaka/paap_app5",
+    linkLabel: "View source",
+  },
+  {
+    name: "Portfolio system",
+    category: "Personal portfolio",
+    summary:
+      "A responsive portfolio with published project listings and owner-protected project management.",
+    stack: "Next.js · React · TypeScript · Supabase",
+    href: "/projects",
+    linkLabel: "Explore projects",
+  },
 ];
 
-const strengths = [
-	"Next.js and React application development",
-	"TypeScript and component-driven frontend architecture",
-	"Supabase data design, auth, and RLS workflows",
-	"Responsive UI implementation and user-focused design decisions",
-	"API integration, deployment, and iterative delivery",
+const certifications = [
+  ["Databases", "September 2026"],
+  ["HTML5 Application Development", "August 2026"],
+  ["Software Development", "August 2026"],
+  ["JavaScript", "July 2026"],
+  ["Python", "May 2026"],
+  ["HTML and CSS", "March 2026"],
+  ["Computational Thinking", "March 2026"],
 ];
+
+function ArrowIcon({ diagonal = false }: { diagonal?: boolean }) {
+  return diagonal ? (
+    <svg className="cv-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path d="M4 12 12 4M5 4h7v7" />
+    </svg>
+  ) : (
+    <svg className="cv-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path d="M2.5 8h10m-4-4 4 4-4 4" />
+    </svg>
+  );
+}
 
 export default function CvPage() {
-	return (
-		<main className="page-shell cv-page">
-			<header className="cv-hero">
-				<p className="eyebrow">EXPERIENCE</p>
-				<h1>CV</h1>
-				<p>
-					I build useful software for real workflows—combining product thinking,
-					front-end clarity, and dependable backend structure.
-				</p>
-				<div className="cv-meta">
-					<span>Legion Cunningham</span>
-					<span>Full Stack Developer</span>
-					<span>Available for product and web roles</span>
-				</div>
-				<a className="button button-primary cv-download" href="/Legion-Cunningham-CV.pdf" download>
-					Download CV <span aria-hidden="true">↓</span>
-				</a>
-			</header>
+  return (
+    <main className="page-shell cv-page">
+      <header className="cv-hero">
+        <p className="eyebrow">CURRICULUM VITAE</p>
+        <h1>Legion Cunningham</h1>
+        <p className="cv-role">Software Engineering Student <span aria-hidden="true">·</span> Junior Developer</p>
+        <p className="cv-summary">
+          I&apos;m studying software development at UniCollege and building practical
+          applications through coursework and capstone projects. I&apos;m seeking an
+          internship or junior developer role where I can contribute and grow.
+        </p>
+        <div className="cv-actions">
+          <a className="button button-primary cv-download" href="/Legion-Cunningham-CV.pdf" download>
+            Download PDF <span aria-hidden="true">↓</span>
+          </a>
+          <a className="cv-email-link" href="mailto:legion.cunningham@gmail.com">
+            Email Legion <ArrowIcon />
+          </a>
+        </div>
+        <ul className="cv-contact-list" aria-label="Contact details">
+          <li>Johannesburg, Gauteng</li>
+          <li><a href="tel:+27825593196">082 559 3196</a></li>
+          <li><a href="mailto:legion.cunningham@gmail.com">legion.cunningham@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/legion-cunningham" target="_blank" rel="noreferrer">LinkedIn <ArrowIcon diagonal /></a></li>
+          <li><a href="https://github.com/Legionaka" target="_blank" rel="noreferrer">GitHub <ArrowIcon diagonal /></a></li>
+        </ul>
+      </header>
 
-			<section className="cv-grid" aria-label="CV details">
-				<article className="cv-card">
-					<h2>Profile</h2>
-					<p>
-						Full stack developer focused on building digital products that are
-						useful, understandable, and reliable for the people who depend on them.
-					</p>
-				</article>
+      <section className="cv-experience" aria-labelledby="cv-experience-title">
+        <div className="cv-section-heading">
+          <p className="eyebrow">PRACTICAL EXPERIENCE</p>
+          <h2 id="cv-experience-title">Learning by building.</h2>
+        </div>
+        <article className="cv-experience-entry">
+          <div>
+            <h3>Software development coursework and capstone projects</h3>
+            <p>UniCollege <span aria-hidden="true">·</span> 2026 - Present</p>
+          </div>
+          <p>
+            Build working applications through practical coursework, collaborate
+            with peers on project milestones, and apply software development
+            concepts to real use cases.
+          </p>
+        </article>
+      </section>
 
-				<article className="cv-card">
-					<h2>Core strengths</h2>
-					<ul className="cv-list">
-						{strengths.map((item) => (
-							<li key={item}>{item}</li>
-						))}
-					</ul>
-				</article>
+      <section className="cv-projects" aria-labelledby="cv-projects-title">
+        <div className="cv-section-heading cv-projects-heading">
+          <div>
+            <p className="eyebrow">SELECTED PROJECTS</p>
+            <h2 id="cv-projects-title">Work across real workflows.</h2>
+          </div>
+          <Link href="/projects" className="cv-section-link">All portfolio projects <ArrowIcon /></Link>
+        </div>
+        <div className="cv-project-grid">
+          {projects.map((project) => (
+            <article className="cv-project-card" key={project.name}>
+              <p className="cv-project-category">{project.category}</p>
+              <h3>{project.name}</h3>
+              <p className="cv-project-summary">{project.summary}</p>
+              <p className="cv-project-stack">{project.stack}</p>
+              {project.href && (
+                project.href.startsWith("/") ? (
+                  <Link href={project.href} className="cv-project-link">{project.linkLabel} <ArrowIcon /></Link>
+                ) : (
+                  <a href={project.href} target="_blank" rel="noreferrer" className="cv-project-link">{project.linkLabel} <ArrowIcon diagonal /></a>
+                )
+              )}
+            </article>
+          ))}
+        </div>
+      </section>
 
-				<article className="cv-card">
-					<h2>Selected experience</h2>
-					<ul className="cv-list">
-						{experience.map((item) => (
-							<li key={item.title}>
-								<strong>{item.title}</strong> — {item.detail}
-							</li>
-						))}
-					</ul>
-				</article>
+      <section className="cv-details-grid" aria-label="Education and technical skills">
+        <article className="cv-detail-panel">
+          <p className="eyebrow">EDUCATION</p>
+          <h2>IT Programming</h2>
+          <p>UniCollege <span aria-hidden="true">·</span> Full-time programme, in progress</p>
+          <p className="cv-detail-date">2026 - Present</p>
+          <div className="cv-education-secondary">
+            <h3>National Senior Certificate <span>·</span> Bachelor Pass</h3>
+            <p>Hoërskool Monument <span aria-hidden="true">·</span> 2021 - 2025</p>
+          </div>
+        </article>
 
-				<article className="cv-card">
-					<h2>Portfolio highlights</h2>
-					<p>
-						Work spans healthcare operations, route discovery tools, offline-first
-						mobile experiences, and a portfolio system backed by Supabase and App
-						Router.
-					</p>
-					<Link href="/projects" aria-label="View selected work">
-						Explore projects ↗
-					</Link>
-				</article>
-			</section>
-		</main>
-	);
+        <article className="cv-detail-panel">
+          <p className="eyebrow">TECHNICAL SKILLS</p>
+          <dl className="cv-skill-groups">
+            <div><dt>Languages</dt><dd>Python, JavaScript, TypeScript, SQL, HTML5, CSS</dd></div>
+            <div><dt>Frameworks</dt><dd>React, Next.js, Flask, Node.js, Express, .NET (C#), Tailwind CSS</dd></div>
+            <div><dt>Data and tools</dt><dd>REST APIs, SQLite, PostgreSQL, Supabase, Git, GitHub, Vercel</dd></div>
+            <div><dt>Strengths</dt><dd>Problem solving, computational thinking, teamwork, communication</dd></div>
+          </dl>
+        </article>
+      </section>
+
+      <section className="cv-certifications" aria-labelledby="cv-certifications-title">
+        <div className="cv-section-heading cv-certifications-heading">
+          <div>
+            <p className="eyebrow">CERTIFICATIONS</p>
+            <h2 id="cv-certifications-title">Seven Certiport IT Specialist certificates.</h2>
+          </div>
+          <p>Certiport <span aria-hidden="true">·</span> Pearson VUE</p>
+        </div>
+        <ul className="cv-certification-list">
+          {certifications.map(([name, date]) => (
+            <li key={name}><span>{name}</span><time>{date}</time></li>
+          ))}
+        </ul>
+      </section>
+    </main>
+  );
 }
