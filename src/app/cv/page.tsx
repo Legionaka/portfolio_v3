@@ -14,6 +14,8 @@ const projects = [
     summary:
       "A full stack point-of-sale system covering checkout, cashier shifts, refunds, inventory, and store reports.",
     stack: "Next.js · React · TypeScript · Supabase · PostgreSQL",
+    href: "https://pos-system-kappa-nine.vercel.app/",
+    linkLabel: "View live demo",
   },
   {
     name: "Medi-Clinic",
@@ -23,24 +25,6 @@ const projects = [
     stack: "Next.js · React · Supabase Auth · PostgreSQL",
     href: "/projects/medi-clinic",
     linkLabel: "Read the case study",
-  },
-  {
-    name: "Stillwater",
-    category: "Fishing and location data",
-    summary:
-      "A mobile-first South African fishing-water guide with location data, community features, and offline access to saved guides.",
-    stack: "Node.js · PostgreSQL · PostGIS · Vercel",
-    href: "https://github.com/Legionaka/paap_app5",
-    linkLabel: "View source",
-  },
-  {
-    name: "Portfolio system",
-    category: "Personal portfolio",
-    summary:
-      "A responsive portfolio with published project listings and owner-protected project management.",
-    stack: "Next.js · React · TypeScript · Supabase",
-    href: "/projects",
-    linkLabel: "Explore projects",
   },
 ];
 
@@ -74,9 +58,10 @@ export default function CvPage() {
         <h1>Legion Cunningham</h1>
         <p className="cv-role">Software Engineering Student <span aria-hidden="true">·</span> Junior Developer</p>
         <p className="cv-summary">
-          I&apos;m studying software development at UniCollege and building practical
+          I&apos;m studying IT programming at UniCollege and building practical
           applications through coursework and capstone projects. I&apos;m seeking an
-          internship or junior developer role where I can contribute and grow.
+          internship or junior developer role where I can contribute and continue
+          developing my skills.
         </p>
         <div className="cv-actions">
           <a className="button button-primary cv-download" href="/Legion-Cunningham-CV.pdf" download>
@@ -106,9 +91,9 @@ export default function CvPage() {
             <p>UniCollege <span aria-hidden="true">·</span> 2026 - Present</p>
           </div>
           <p>
-            Build working applications through practical coursework, collaborate
-            with peers on project milestones, and apply software development
-            concepts to real use cases.
+            Build applications through practical coursework, collaborate with
+            peers on project milestones, and apply software development concepts
+            to real-world use cases.
           </p>
         </article>
       </section>
@@ -119,7 +104,7 @@ export default function CvPage() {
             <p className="eyebrow">SELECTED PROJECTS</p>
             <h2 id="cv-projects-title">Work across real workflows.</h2>
           </div>
-          <Link href="/projects" className="cv-section-link">All portfolio projects <ArrowIcon /></Link>
+          <Link href="/projects" className="cv-section-link">Browse all projects <ArrowIcon /></Link>
         </div>
         <div className="cv-project-grid">
           {projects.map((project) => (
