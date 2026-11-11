@@ -4,7 +4,7 @@ import { SiteNavigation } from "./mobile-nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfoliov3-ashen-rho.vercel.app"),
+  metadataBase: new URL("https://portfolio-v3-ochre-rho.vercel.app"),
   title: {
     default: "Legion Cunningham | Full Stack Developer",
     template: "%s | Legion Cunningham",

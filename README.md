@@ -1,6 +1,6 @@
 # Legion Cunningham — Portfolio
 
-> **Live site:** [portfoliov3-ashen-rho.vercel.app](https://portfoliov3-ashen-rho.vercel.app/)
+> **Live site:** [Portfolio About page](https://portfolio-v3-ochre-rho.vercel.app/about)
 > **Repository:** [github.com/Legionaka/portfolio_v3](https://github.com/Legionaka/portfolio_v3)
 > **README submission link:** [README.md on GitHub](https://github.com/Legionaka/portfolio_v3/blob/main/README.md)
 
@@ -28,7 +28,7 @@ The site is aimed at hiring teams, recruiters, and collaborators assessing a Ful
 ### Medi-Clinic
 **Medi-Clinic** is a role-based healthcare portal focused on patient services, care-team workflows, and clinic operations. It includes patient, doctor, and administrator views, bringing appointment management, billing, records, and workflow access into one connected system.
 
-- [Case study](https://portfoliov3-ashen-rho.vercel.app/projects/medi-clinic)
+- [Case study](https://portfolio-v3-ochre-rho.vercel.app/projects/medi-clinic)
 - [Live demo](https://5-soc-dash-zlps.vercel.app/)
 - [Source repository](https://github.com/Legionaka/5SOC_Dash)
 

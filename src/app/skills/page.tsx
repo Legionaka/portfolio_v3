@@ -88,7 +88,7 @@ const skills = [
     description:
       "Publish a working portfolio with public project pages and a Supabase-backed content workflow.",
     evidence: "Live portfolio",
-    href: "https://portfoliov3-ashen-rho.vercel.app/",
+    href: "https://portfolio-v3-ochre-rho.vercel.app/",
     kind: "Live",
   },
 ];
