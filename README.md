@@ -54,7 +54,7 @@ Next.js App Router, React, TypeScript, Tailwind CSS with custom CSS, Supabase, a
 
 ## Supabase and project data
 
-The public Projects page reads from the Supabase `projects` table and shows only published entries. The admin area is protected by Supabase Auth and checks owner access before allowing project writes. The contact form saves submissions to the `contact_messages` table; visitors can insert messages but cannot read the inbox. Apply all SQL migrations in `supabase/migrations/` before using these features.
+The public Projects page reads from the Supabase `projects` table and shows only published entries. The admin area is protected by Supabase Auth and checks owner access before allowing project writes. The contact form saves submissions to the `contact_messages` table; visitors can submit messages but cannot read submissions. Apply all SQL migrations in `supabase/migrations/` before using these features.
 
 For setup and database notes, see [Supabase setup](docs/supabase-setup.md). Required local environment variables are `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`; add them to `.env.local` (never commit environment files).
 
@@ -69,7 +69,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Milestone reflection
 
-This milestone establishes a portfolio structure with a stronger narrative around the capstone project, multiple pieces of evidence, and a public projects archive that is dynamic and database-driven. The final portfolio narrative is clearer and aligned with the brief: it presents a professional identity, explains the type of work I build, and gives hiring teams a way to review concrete examples.
+This milestone completes the contact form, adds a downloadable CV, and improves the site for smaller screens. I chose a hidden honeypot field and a minimum completion-time check to catch common bot submissions without adding friction for visitors. The biggest layout issue was the contact area becoming cramped on phones; I fixed it by stacking the form content into one column and preventing horizontal overflow at mobile widths. I also checked that links and form fields remain keyboard accessible and that text stays readable across screen sizes.
 
 ## AI use
 
